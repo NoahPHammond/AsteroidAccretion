@@ -8,7 +8,7 @@
       "webPort": "6080"
     }
   },
-  "forwardPorts":,
+  "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
       "label": "Game Desktop Display",
