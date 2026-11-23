@@ -1,13 +1,12 @@
-
 {
   "name": "C++ SFML 3 Asteroids",
-  "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu24.04",
+  "image": "://microsoft.com",
 
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
 
-  "forwardPorts": [6080],
+  "forwardPorts": [ 6080 ],
 
   "portsAttributes": {
     "6080": {
@@ -16,5 +15,5 @@
     }
   },
 
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential cmake ninja-build git pkg-config libx11-dev libxrandr-dev libxcursor-dev libxi-dev libudev-dev libfreetype-dev libharfbuzz-dev libflac-dev libogg-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev libopenal-dev && git clone --depth 1 --branch 3.0.0 https://github.com/SFML/SFML.git /tmp/sfml && cmake -S /tmp/sfml -B /tmp/sfml/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DSFML_BUILD_EXAMPLES=OFF -DSFML_BUILD_TEST_SUITE=OFF && sudo cmake --build /tmp/sfml/build --target install --parallel 2 && sudo ldconfig && rm -rf /tmp/sfml"
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential cmake ninja-build git pkg-config libx11-dev libxrandr-dev libxcursor-dev libxi-dev libudev-dev libfreetype-dev libharfbuzz-dev libflac-dev libogg-dev libvorbis-dev libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev libopenal-dev && git clone --depth 1 --branch 3.0.0 https://github.com /tmp/sfml && cmake -S /tmp/sfml -B /tmp/sfml/build -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCMAKE_INSTALL_PREFIX=/usr/local -DSFML_BUILD_EXAMPLES=OFF -DSFML_BUILD_TEST_SUITE=OFF && sudo cmake --build /tmp/sfml/build --target install && echo '/usr/local/lib' | sudo tee /etc/ld.so.conf.d/sfml.conf && sudo ldconfig && rm -rf /tmp/sfml"
 }
