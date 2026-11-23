@@ -1,0 +1,26 @@
+{
+  "name": "C++ SFML 3 Physics Lab",
+  "image": "://microsoft.com",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "password": "noPassword",
+      "webPort": "6080"
+    }
+  },
+  "forwardPorts":,
+  "portsAttributes": {
+    "6080": {
+      "label": "Game Desktop Display",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y cmake libxrandr-dev libxcursor-dev libxi-dev libudev-dev libfreetype-dev libflac-dev libvorbis-dev libgl1-mesa-dev libopenal-dev && git clone --depth 1 --branch 3.0.0 https://github.com /tmp/sfml && cmake -S /tmp/sfml -B /tmp/sfml/build -DBUILD_SHARED_LIBS=ON && sudo cmake --build /tmp/sfml/build --target install -j && sudo ldconfig && rm -rf /tmp/sfml",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools"
+      ]
+    }
+  }
+}
