@@ -15,7 +15,7 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y cmake libxrandr-dev libxcursor-dev libxi-dev libudev-dev libfreetype-dev libflac-dev libvorbis-dev libgl1-mesa-dev libopenal-dev && git clone --depth 1 --branch 3.0.0 https://github.com /tmp/sfml && cmake -S /tmp/sfml -B /tmp/sfml/build -DBUILD_SHARED_LIBS=ON && sudo cmake --build /tmp/sfml/build --target install -j && sudo ldconfig && rm -rf /tmp/sfml",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y cmake libx11-dev libxrandr-dev libxcursor-dev libxi-dev libudev-dev libfreetype-dev libflac-dev libogg-dev libvorbis-dev libgl1-mesa-dev libopenal-dev && git clone --depth 1 --branch 3.0.0 https://github.com /tmp/sfml && cmake -S /tmp/sfml -B /tmp/sfml/build -DBUILD_SHARED_LIBS=ON && sudo cmake --build /tmp/sfml/build --target install -j && sudo ldconfig && rm -rf /tmp/sfml",
   "customizations": {
     "vscode": {
       "extensions": [
